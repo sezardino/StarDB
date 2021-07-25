@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
+
 import "./PeoplePage.module.css";
 import api from "@/utils/network";
 import PeopleList from "@/components/PeoplePage/PeopleList";
@@ -23,6 +25,10 @@ const PeoplePage = ({ setError }) => {
       <PeopleList people={list} />
     </>
   );
+};
+
+PeoplePage.propTypes = {
+  setError: PropTypes.func,
 };
 
 export default withNetworkError(PeoplePage);

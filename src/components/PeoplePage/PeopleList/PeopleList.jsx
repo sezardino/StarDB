@@ -1,3 +1,5 @@
+import React from "react";
+import PropTypes from "prop-types";
 import style from "./PeopleList.module.css";
 
 const { list, list__item, list__link, list__img, list__title } = style;
@@ -15,6 +17,10 @@ const PeopleList = ({ people }) => {
       ))}
     </ul>
   );
+};
+
+PeopleList.propTypes = {
+  people: PropTypes.array,
 };
 
 export default PeopleList;
