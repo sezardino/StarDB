@@ -4,25 +4,35 @@ import PropTypes from "prop-types";
 import "./PeoplePage.module.css";
 import api from "@/utils/network";
 import PeopleList from "@/components/PeoplePage/PeopleList";
+import PeopleNavigation from "@/components/PeoplePage/PeopleNavigation";
+
 import withNetworkError from "@/hocs/withNetworkError";
+import { useQueryParams } from "../../hooks/useQueryParams";
 
 const PeoplePage = ({ setError }) => {
   const [list, setList] = useState([]);
-  const getResources = async () => {
-    const data = await api.getPeople();
-    if (!data) {
+  const [next, setNext] = useState(null);
+  const [previous, setPrevious] = useState(null);
+  const currentPage = useQueryParams("page");
+
+  const getResources = async (page = 1) => {
+    const { next, previous, list } = await api.getPeople(page);
+    if (!list) {
       setError(true);
     } else {
       setError(false);
-      setList(data);
+      setNext(next);
+      setPrevious(previous);
+      setList(list);
     }
   };
   useEffect(() => {
-    getResources();
-  }, []);
+    getResources(currentPage);
+  }, [currentPage]);
+
   return (
     <>
-      <h1>People</h1>
+      <PeopleNavigation next={next} previous={previous} />
       <PeopleList people={list} />
     </>
   );

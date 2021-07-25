@@ -15,7 +15,7 @@ const Header = () => {
             </NavLink>
           </li>
           <li className={header__item}>
-            <NavLink activeClassName={active} exact className={header__link} to="/people">
+            <NavLink activeClassName={active} exact className={header__link} to="/people?page=1">
               People
             </NavLink>
           </li>

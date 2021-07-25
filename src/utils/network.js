@@ -12,13 +12,17 @@ class Api {
       people: "people",
       characters: "characters",
     };
+    this.query = {
+      page: "?page=",
+    };
 
     this.messages = { error: "Could not fetch." };
   }
 
-  async getData(url) {
+  async getData(url, page) {
     try {
-      const response = await fetch(this.urls.base + url);
+      const concatUrl = page ? this.urls.base + url + this.query.page + page : this.urls.base + url;
+      const response = await fetch(concatUrl);
       if (response.ok) {
         return await response.json();
       } else {
@@ -29,22 +33,34 @@ class Api {
     }
   }
 
-  async getPeople() {
-    const data = await this.getData(this.endpoints.people);
-    const formattedData = data.results.map((item) => {
+  async getPeople(page) {
+    const { next, previous, results } = await this.getData(this.endpoints.people, page);
+    const list = results.map((item) => {
       const { name, url } = item;
 
       const id = this._getIdFromUrl(url, this.endpoints.people);
       const image = this._getMedia({ endpoint: this.endpoints.characters, id });
-
       return { name, url, id, image };
     });
 
-    return formattedData;
+    return {
+      list,
+      next: this._getQueryValueFromUrl(next, this.endpoints.people, this.query.page),
+      previous: this._getQueryValueFromUrl(previous, this.endpoints.people, this.query.page),
+    };
   }
 
   _getIdFromUrl(url, endpoint) {
     const id = url.replace(this.urls.base + endpoint, "").replaceAll("/", "");
+    return id;
+  }
+
+  _getQueryValueFromUrl(url, endpoint, query) {
+    if (!url) {
+      return null;
+    }
+
+    const id = url.replace(this.urls.base + endpoint + "/" + query, "");
     return id;
   }
 
