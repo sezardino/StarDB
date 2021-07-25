@@ -19,6 +19,11 @@ const Header = () => {
               People
             </NavLink>
           </li>
+          <li className={header__item}>
+            <NavLink activeClassName={active} exact className={header__link} to="/not-found">
+              Not Found
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </header>

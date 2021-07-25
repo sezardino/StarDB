@@ -1,0 +1,26 @@
+.not {
+}
+
+.not__title {
+  font-size: 160px;
+  line-height: 100px;
+  color: var(--color-white);
+  text-shadow: 0 0 5px var(--color-yellow);
+  text-align: center;
+  margin: 0;
+}
+
+.not__subtitle {
+  margin: 0;
+  font-size: 80px;
+  line-height: 85px;
+  color: var(--color-white);
+  text-shadow: 0 0 5px var(--color-yellow);
+
+  text-align: center;
+}
+
+.not__img {
+  max-width: 600px;
+  margin: 0 auto;
+}
