@@ -2,7 +2,9 @@
   --color-black: #000;
   --color-white: #fff;
   --color-dark-gray: #10100e;
+  --color-yellow: #ffff00;
 
+  --font-size-heading: 26px;
   --border-radius: 3px;
   --spacing-medium: 20px;
 }
