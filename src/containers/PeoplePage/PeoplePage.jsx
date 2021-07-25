@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 import "./PeoplePage.module.css";
-import api from "@/utils/network";
+import api from "@/api";
 import PeopleList from "@/components/PeoplePage/PeopleList";
 import PeopleNavigation from "@/components/PeoplePage/PeopleNavigation";
 
@@ -14,8 +14,7 @@ const PeoplePage = ({ setError }) => {
   const [next, setNext] = useState(null);
   const [previous, setPrevious] = useState(null);
   const currentPage = useQueryParams("page");
-
-  const getResources = async (page = 1) => {
+  const getResources = async (page) => {
     const { next, previous, list } = await api.getPeople(page);
     if (!list) {
       setError(true);

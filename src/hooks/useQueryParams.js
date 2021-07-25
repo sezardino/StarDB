@@ -1,18 +1,12 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router";
+import { getParamValue } from "../utils/network";
 
 export const useQueryParams = (param) => {
   const { search } = useLocation();
-  const [value, setValue] = useState(null);
-
+  const [value, setValue] = useState(getParamValue(search, param));
   useEffect(() => {
-    if (!search) {
-      return;
-    }
-    const params = search.split("?");
-
-    const neededValue = params.find((item) => item.includes(param)).split("=")[1];
-    setValue(neededValue);
+    setValue(getParamValue(search, param));
   }, [search]);
 
   return value;
