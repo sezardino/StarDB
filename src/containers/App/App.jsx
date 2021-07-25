@@ -1,8 +1,8 @@
 import "./App.css";
-import api from "../../utils/network";
+import PeoplePage from "../PeoplePage";
 
 const App = () => {
-    return <h1>StarDb</h1>;
+  return <PeoplePage />;
 };
 
 export default App;

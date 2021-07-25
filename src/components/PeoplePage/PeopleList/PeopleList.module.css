@@ -1,0 +1,33 @@
+.list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--spacing-medium);
+}
+
+.list__item {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+
+  overflow: hidden;
+}
+
+.list__link {
+  color: var(--color-black);
+  text-decoration: none;
+  text-align: center;
+}
+
+.list__img {
+  width: 100%;
+  max-width: 100%;
+
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.list__title {
+  font-size: 18px;
+}
