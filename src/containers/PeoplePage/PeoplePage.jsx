@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import "./PeoplePage.module.css";
-import api from "../../utils/network";
-import PeopleList from "../../components/PeoplePage/PeopleList";
-import withNetworkError from "../../hocs/withNetworkError";
+import api from "@/utils/network";
+import PeopleList from "@/components/PeoplePage/PeopleList";
+import withNetworkError from "@/hocs/withNetworkError";
 
 const PeoplePage = ({ setError }) => {
   const [list, setList] = useState([]);
