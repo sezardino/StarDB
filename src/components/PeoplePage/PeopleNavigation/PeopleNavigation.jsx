@@ -15,7 +15,7 @@ const PeopleNavigation = ({ next, previous }) => {
         </li>
         <li className={nav__item}>
           <Link className={nav__link} to={`/people?page=${next}`}>
-            <UIButton disabled={!next} theme="white" label="Next" />
+            <UIButton disabled={!next} label="Next" />
           </Link>
         </li>
       </ul>
