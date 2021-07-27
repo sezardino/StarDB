@@ -88,8 +88,20 @@ class Api {
     return id;
   }
 
+  async makeConcurrentRequest(urls) {
+    const result = await Promise.all(urls.map((url) => fetch(url).then((response) => response.json())));
+
+    return result.map(this._transformFilmData);
+  }
+
   _getMedia({ endpoint, id }) {
     return `${this.urls.visualGuide}assets/img/${endpoint}/${id}.jpg`;
+  }
+
+  _transformFilmData(film) {
+    const { episode_id: episode, title } = film;
+
+    return { episode, title };
   }
 
   _transformPersonData(data) {

@@ -1,0 +1,25 @@
+.link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 5px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  margin-bottom: 20px;
+}
+
+.link__img {
+  width: 35px;
+  height: 35px;
+}
+
+.link__label {
+  font-size: 25px;
+  font-weight: 700;
+  color: var(--color-yellow)
+}

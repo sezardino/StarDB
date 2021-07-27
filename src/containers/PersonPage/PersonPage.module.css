@@ -1,0 +1,36 @@
+.page {}
+
+.page__title {
+  display: inline-block;
+  background-color: var(--color-violet);
+  margin: 0;
+  padding: 8px;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+
+  color: var(--color-white);
+}
+
+.page__container {
+  padding-left: 20px;
+  margin-top: 20px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.page__wrapper {
+  border-left: 4px solid var(--color-violet);
+  padding-bottom: 20px;
+}
+
+.page__img {
+  max-width: 250px;
+
+  border-radius: var(--border-radius);
+}
+
+.page__info {}
+
+.page__films {}
