@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { nav, nav__list, nav__item, nav__link, nav__button } from "./PeopleNavigation.module.css";
+import UIButton from "@/components/UI/UIButton";
 
 const PeopleNavigation = ({ next, previous }) => {
   return (
@@ -9,16 +10,12 @@ const PeopleNavigation = ({ next, previous }) => {
       <ul className={nav__list}>
         <li className={nav__item}>
           <Link className={nav__link} to={`/people?page=${previous}`}>
-            <button disabled={!previous} className={nav__button}>
-              Previous
-            </button>
+            <UIButton disabled={!previous} label="Previous" />
           </Link>
         </li>
         <li className={nav__item}>
           <Link className={nav__link} to={`/people?page=${next}`}>
-            <button disabled={!next} className={nav__button}>
-              Next
-            </button>
+            <UIButton disabled={!next} theme="white" label="Next" />
           </Link>
         </li>
       </ul>
