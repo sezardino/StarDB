@@ -5,7 +5,6 @@ import styles from "./UILoader.module.css";
 const { loader, loader__line } = styles;
 
 const UILoader = ({ classes, theme = "red" }) => {
-  console.log(styles);
   return (
     <div className={`${loader} ${styles[theme]} ${classes}`}>
       <div className={loader__line}>

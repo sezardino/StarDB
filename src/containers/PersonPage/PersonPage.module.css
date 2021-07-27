@@ -1,4 +1,5 @@
-.page {}
+.page {
+}
 
 .page__title {
   display: inline-block;
@@ -29,8 +30,18 @@
   max-width: 250px;
 
   border-radius: var(--border-radius);
+
+  position: relative;
 }
 
-.page__info {}
+.page__info {
+}
 
-.page__films {}
+.page__films {
+}
+
+.page__favorite {
+  position: absolute;
+  top: -15px;
+  right: 0;
+}

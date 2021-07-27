@@ -15,13 +15,18 @@ const Header = () => {
             </NavLink>
           </li>
           <li className={header__item}>
-            <NavLink activeClassName={active} exact className={header__link} to="/people?page=1">
+            <NavLink activeClassName={active} className={header__link} to="/people?page=1">
               People
             </NavLink>
           </li>
           <li className={header__item}>
             <NavLink activeClassName={active} exact className={header__link} to="/not-found">
               Not Found
+            </NavLink>
+          </li>
+          <li className={header__item}>
+            <NavLink activeClassName={active} exact className={header__link} to="/favorites">
+              Favorites
             </NavLink>
           </li>
         </ul>

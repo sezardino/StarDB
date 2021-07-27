@@ -1,0 +1,34 @@
+.favorite {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.favorite svg {
+  width: 35px;
+  fill: var(--color-violet);
+}
+
+.favorite.white svg {
+  fill: var(--color-white);
+}
+
+.favorite.dark svg {
+  fill: var(--color-black);
+}
+
+.favorite.yellow svg {
+  fill: var(--color-yellow);
+}
+
+.favorite.violet svg {
+  fill: var(--color-violet);
+}
+
+.favorite.red svg {
+  fill: var(--color-red);
+}
+
+.favorite.blue svg {
+  fill: var(--color-blue);
+}

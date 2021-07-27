@@ -68,7 +68,7 @@ class Api {
     try {
       const result = await this.getData(fetchProps);
       const image = this._getMedia({ endpoint: this.endpoints.characters, id });
-      return { ...this._transformPersonData(result), image };
+      return { ...this._transformPersonData(result), image, id };
     } catch (error) {
       console.log(error);
     }
