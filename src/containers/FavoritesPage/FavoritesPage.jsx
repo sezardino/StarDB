@@ -6,7 +6,7 @@ import PeopleList from "@/components/PeoplePage/PeopleList";
 import styles from "./FavoritesPage.module.css";
 
 const FavoritesPage = () => {
-  const favoritesList = useSelector((state) => state.favorites.list);
+  const favoritesList = useSelector((state) => state.favorites?.list);
 
   return (
     <section className="page">
