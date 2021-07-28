@@ -77,7 +77,7 @@ const PersonPage = ({ match, setError }) => {
           <div className={page__container}>
             <div className={page__img}>
               <img className={page__img} src={person.image} alt={person?.name} />
-              <UIFavorite color={inFavorite ? "yellow" : "white"} classes={page__favorite} handler={favoriteHandler} />
+              <UIFavorite color={inFavorite ? "yellow" : "violet"} classes={page__favorite} handler={favoriteHandler} />
             </div>
             <div className={page__info}>
               <PersonInfo fields={person.fields} />

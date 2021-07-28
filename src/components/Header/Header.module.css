@@ -1,8 +1,13 @@
 .header {
   padding: var(--spacing-medium) 0;
 }
+
 .header__nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
+
 .header__list {
   display: flex;
   flex-direction: row;
@@ -12,10 +17,13 @@
   margin: 0;
   padding: 0;
 }
-.header__item {
-}
+
+.header__item {}
 
 .header__link {
+  display: inline-block;
+
+  text-align: center;
   font-size: 18px;
   font-weight: 700;
   text-decoration: none;

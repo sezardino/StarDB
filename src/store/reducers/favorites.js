@@ -1,8 +1,7 @@
+import ls from "@/utils/localStorage";
 import { ADD_TO_FAVORITES, REMOVE_FROM_FAVORITES } from "../types";
 
-const initialState = {
-  list: [],
-};
+const initialState = ls.getFavorites();
 
 const favoriteReducer = (state = initialState, action) => {
   switch (action.type) {

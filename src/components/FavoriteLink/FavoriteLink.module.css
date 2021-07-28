@@ -1,0 +1,35 @@
+.favorite {
+  position: relative;
+  padding: 8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.active {
+  background-color: var(--color-violet);
+  border-radius: 50%;
+}
+
+.favorite__logo {}
+
+.favorite__count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+
+  min-width: 30px;
+  min-height: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  background-color: var(--color-white);
+
+  font-weight: 700;
+  color: var(--color-violet)
+}

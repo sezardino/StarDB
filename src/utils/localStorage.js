@@ -7,7 +7,6 @@ class LS {
 
   setItems(data, key) {
     const dataString = JSON.stringify(data);
-    console.log(dataString);
     localStorage.setItem(key, dataString);
   }
 
@@ -22,7 +21,7 @@ class LS {
   }
 
   getFavorites() {
-    this.getItems(this.keys.favorites);
+    return this.getItems(this.keys.favorites);
   }
 }
 

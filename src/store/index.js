@@ -5,9 +5,8 @@ import ls from "@/utils/localStorage";
 
 const store = createStore(reducer, composeWithDevTools());
 
-store.subscribe((store) => {
-  console.log(1);
+store.subscribe(() => {
   ls.setFavorites(store.getState().favorites);
 });
 
-export default createStore(reducer, composeWithDevTools());
+export default store;

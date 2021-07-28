@@ -1,5 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import FavoriteLink from "@/components/FavoriteLink";
+
 import styles from "./Header.module.css";
 
 const { header, header__nav, header__list, header__item, header__link, active } = styles;
@@ -24,12 +26,9 @@ const Header = () => {
               Not Found
             </NavLink>
           </li>
-          <li className={header__item}>
-            <NavLink activeClassName={active} exact className={header__link} to="/favorites">
-              Favorites
-            </NavLink>
-          </li>
+          <li className={header__item}></li>
         </ul>
+        <FavoriteLink />
       </nav>
     </header>
   );
