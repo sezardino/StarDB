@@ -3,3 +3,9 @@
   border-radius: var(--border-radius);
   box-shadow: 0 0 25px teal;
 }
+
+@media only screen and (max-width: 576px) {
+  .video {
+    max-width: 100%;
+  }
+}

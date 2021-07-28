@@ -95,6 +95,10 @@ ul {
   }
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -103,4 +107,27 @@ ul {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+* {
+  scrollbar-color: rgb(37, 56, 97) rgba(0, 0, 0, .7);
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(37, 56, 97);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: rgba(0, 0, 0, .7);
+}
+
+::-webkit-scrollbar-corner {
+  background-color: rgba(0, 0, 0, .7);
 }

@@ -8,7 +8,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Header />
-      <div className={`${app} container`}>
+      <div className="container">
         <Switch>
           {routes.map(({ path, exact, component }) => (
             <Route path={path} exact={exact} component={component} key={path} />
