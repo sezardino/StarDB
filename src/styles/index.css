@@ -11,15 +11,25 @@
 
   --transition: 0.4s;
 
-  --theme-default-header: #cccc46;
+  --theme-default-title: #cccc46;
+  --theme-light-title: #dfe2df;
+  --theme-dark-title: #ca6c6f;
+
   --theme-default-bg: url(@/static/bg.jpg);
+  --theme-light-bg: linear-gradient(to right bottom, #051937, #162454, #312d70, #533389, #7a359f);
+  --theme-dark-bg: linear-gradient(to right bottom, #000000, #160b11, #20141e, #281b2e, #2b2440);
+  ;
+
+  --theme-title: var(--theme-default-title);
+
+  --theme-bg: var(--theme-default-bg);
 }
 
 body {
   margin: 0;
   padding: 0;
   background-color: var(--color-dark-gray);
-  background-image: var(--theme-default-bg);
+  background-image: var(--theme-bg);
   background-position: top left;
   background-size: cover;
   background-attachment: fixed;
@@ -29,7 +39,7 @@ body {
 h1 {
   line-height: 1.7;
   font-size: var(--font-size-heading);
-  color: var(--theme-default-header);
+  color: var(--theme-title);
   text-shadow: 0 0 3px var(--color-black);
   transition: color var(--transition);
 }
