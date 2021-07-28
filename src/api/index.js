@@ -13,21 +13,27 @@ class Api {
       characters: "characters",
     };
     this.query = {
-      page: "?page=",
+      page: "page",
+      search: "search",
     };
 
     this.messages = { error: "Could not fetch." };
   }
 
   async getData(data) {
-    const { endpoint, page, id } = data;
-    const concatUrl = page
-      ? `${this.urls.base}${endpoint}${this.query.page}${page}`
-      : id
-      ? `${this.urls.base}${endpoint}/${id}`
-      : `${this.urls.base}${endpoint}`;
+    const { endpoint, id, query, value } = data;
+
+    let url;
+    if (query) {
+      url = `${this.urls.base}${endpoint}?${query}=${value}`;
+    } else if (id) {
+      url = `${this.urls.base}${endpoint}/${id}`;
+    } else {
+      url = `${this.urls.base}${endpoint}`;
+    }
+
     try {
-      const response = await fetch(concatUrl);
+      const response = await fetch(url);
       if (response.ok) {
         return await response.json();
       } else {
@@ -38,10 +44,11 @@ class Api {
     }
   }
 
-  async getPeople(page) {
+  async getPeople(value) {
     const fetchProps = {
       endpoint: this.endpoints.people,
-      page,
+      query: this.query.page,
+      value,
     };
 
     const { next, previous, results } = await this.getData(fetchProps);
@@ -72,6 +79,26 @@ class Api {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  async getPeopleSearch(value) {
+    const fetchProps = {
+      endpoint: this.endpoints.people,
+      query: this.query.search,
+      value,
+    };
+
+    const data = await this.getData(fetchProps);
+
+    const list = data.results.map((item) => {
+      const { name, url } = item;
+
+      const id = this._getIdFromUrl(url, this.endpoints.people);
+      const image = this._getMedia({ endpoint: this.endpoints.characters, id });
+      return { name, id, image };
+    });
+
+    return list;
   }
 
   _getIdFromUrl(url, endpoint) {

@@ -1,0 +1,40 @@
+.wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.input {
+  height: 40px;
+  width: 250px;
+
+  font-weight: 700;
+  font-size: 18px;
+  padding-left: 5px;
+}
+
+.button {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.image {
+  width: 20px;
+}

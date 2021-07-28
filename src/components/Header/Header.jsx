@@ -53,6 +53,11 @@ const Header = () => {
             </NavLink>
           </li>
           <li className={header__item}>
+            <NavLink activeClassName={active} className={header__link} to="/search">
+              Search
+            </NavLink>
+          </li>
+          <li className={header__item}>
             <NavLink activeClassName={active} exact className={header__link} to="/not-found">
               Not Found
             </NavLink>
