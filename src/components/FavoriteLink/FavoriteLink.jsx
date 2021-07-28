@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 const { favorite, active, favorite__logo, favorite__count } = styles;
 
 const FavoriteLink = () => {
-  const favoriteCount = useSelector((state) => state.favorites.list.length);
+  const favoriteCount = useSelector((state) => state.favorites?.list.length);
 
   return (
     <NavLink activeClassName={active} exact className={favorite} to="/favorites">

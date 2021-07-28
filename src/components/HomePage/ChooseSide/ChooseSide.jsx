@@ -18,7 +18,7 @@ const ChooseSide = () => {
   return (
     <div className={wrapper}>
       {buttons.map(({ className, theme, img, label }) => (
-        <button className={`${button} ${className}`} onClick={() => changeTheme(theme)}>
+        <button key={label} className={`${button} ${className}`} onClick={() => changeTheme(theme)}>
           <img className={image} src={img} alt={label} />
           <span className={span}>{label}</span>
         </button>
