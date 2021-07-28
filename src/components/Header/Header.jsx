@@ -62,6 +62,11 @@ const Header = () => {
               Not Found
             </NavLink>
           </li>
+          <li className={header__item}>
+            <NavLink activeClassName={active} exact className={header__link} to="/fail">
+              Fail
+            </NavLink>
+          </li>
           <li className={header__item}></li>
         </ul>
         <FavoriteLink />

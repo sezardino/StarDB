@@ -8,3 +8,7 @@
 
   text-shadow: 0 0 3px var(--color-white);
 }
+
+.video {
+  margin: 0 auto;
+}

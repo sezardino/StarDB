@@ -1,0 +1,5 @@
+.video {
+  display: block;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 25px teal;
+}
