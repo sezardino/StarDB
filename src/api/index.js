@@ -35,7 +35,13 @@ class Api {
     try {
       const response = await fetch(url);
       if (response.ok) {
-        return await response.json();
+        const result = await response.json();
+
+        return {
+          ...result,
+          previous: result.previous?.split("page=")[1] || null,
+          next: result.next?.split("page=")[1] || null,
+        };
       } else {
         return false;
       }
@@ -51,7 +57,9 @@ class Api {
       value,
     };
 
-    const { next, previous, results } = await this.getData(fetchProps);
+    const res = await this.getData(fetchProps);
+    console.log(res);
+    const { next, previous, results } = res;
     const list = results.map((item) => {
       const { name, url } = item;
 

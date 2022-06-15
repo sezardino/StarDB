@@ -32,7 +32,7 @@ const PersonPage = ({ match, setError }) => {
   const [person, setPerson] = useState(null);
   const [inFavorite, setInFavorite] = useState(false);
   const dispatch = useDispatch();
-  const favoriteList = useSelector((state) => state.favorites.list);
+  const favoriteList = useSelector((state) => state?.favorites?.list);
 
   const getResources = async (id) => {
     const data = await api.getPerson(id);
@@ -45,7 +45,7 @@ const PersonPage = ({ match, setError }) => {
   };
 
   const checkFavorite = () => {
-    return !!favoriteList.find((item) => item.id === id);
+    return !!favoriteList?.find((item) => item.id === id);
   };
 
   useEffect(() => {
